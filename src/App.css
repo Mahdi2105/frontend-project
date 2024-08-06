@@ -4,3 +4,24 @@
   padding: 2rem;
   text-align: center;
 }
+
+body {
+  background-color: #50808e;
+}
+
+img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.articles-area {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.article-card {
+  flex: 40%;
+  margin: 10px;
+}

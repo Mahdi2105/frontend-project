@@ -11,6 +11,7 @@ const Articles = () => {
     setIsLoading(true);
     getAllArticles().then((articlesData) => {
       setArticles(articlesData);
+      console.log(articles);
     });
     setIsLoading(false);
   }, []);

@@ -4,9 +4,13 @@ const Header = () => {
   return (
     <header>
       <h1>NC News</h1>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/articles">Articles</Link>
+      <nav className="navbar">
+        <Link to="/" className="nav-item">
+          Home
+        </Link>
+        <Link to="/articles" className="nav-item">
+          Articles
+        </Link>
       </nav>
     </header>
   );

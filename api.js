@@ -10,10 +10,16 @@ const getAllArticles = () => {
   });
 };
 
-const getArticleById = (id) => {
-  return api.get(`/articles/${id}`).then(({ data }) => {
+const getArticleById = (article_id) => {
+  return api.get(`/articles/${article_id}`).then(({ data }) => {
     return data.article;
   });
 };
 
-export { getAllArticles, getArticleById };
+const getCommentsByArticleId = (article_id) => {
+  return api.get(`/articles/${article_id}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+};
+
+export { getAllArticles, getArticleById, getCommentsByArticleId };

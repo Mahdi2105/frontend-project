@@ -39,7 +39,6 @@ img {
 .main-content {
   display: flex;
   flex-direction: column;
-  position: relative;
   justify-content: center;
   align-items: center;
   min-height: 40vh;
@@ -79,4 +78,20 @@ img {
 :active {
   text-decoration: none;
   color: black;
+}
+
+.comments-area {
+  background-color: #ddd8c4;
+  margin: 20px;
+  box-sizing: border-box;
+  border: black solid 1px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.single-comment {
+  margin: 10px;
+  text-align: left;
+  border-bottom: black solid 1px;
 }

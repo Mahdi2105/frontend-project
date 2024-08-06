@@ -9,19 +9,74 @@ body {
   background-color: #50808e;
 }
 
+.navbar {
+  background-color: #ddd8c4;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: black 1px solid;
+}
+
+.nav-item {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: #50808e;
+  color: white;
+}
+
 img {
   max-width: 200px;
   max-height: 200px;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.loading {
+  align-items: end;
+  justify-content: center;
+}
+
 .articles-area {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  align-items: stretch;
   flex-wrap: wrap;
 }
 
 .article-card {
-  flex: 40%;
-  margin: 10px;
+  background-color: #ddd8c4;
+  flex: 1 1 40%;
+  margin: 20px;
+  box-sizing: border-box;
+  border: black solid 1px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.article-card-content {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+:link,
+:visited,
+:hover,
+:active {
+  text-decoration: none;
+  color: black;
 }

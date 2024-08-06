@@ -1,13 +1,15 @@
-import { Card, CardHeader } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
   return (
-    <Card className="article-card">
-      <CardHeader title={article.title} />
-      <img src={article.article_img_url} />
-      <p>Author: {article.author}</p>
-      <p>Topic: {article.topic}</p>
-    </Card>
+    <Link to={`/articles/${article.article_id}`} className="article-card">
+      <div className="article-card-content">
+        <h2>{article.title}</h2>
+        <img src={article.article_img_url} />
+        <p>Topic: {article.topic}</p>
+        <p>Author: {article.author}</p>
+      </div>
+    </Link>
   );
 };
 

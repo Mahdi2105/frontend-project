@@ -22,4 +22,22 @@ const getCommentsByArticleId = (article_id) => {
   });
 };
 
-export { getAllArticles, getArticleById, getCommentsByArticleId };
+const updateArticleVotes = (article_id, vote) => {
+  return api
+    .patch(`/articles/${article_id}`, { inc_votes: vote })
+    .then(({ data }) => {});
+};
+
+const getUsers = () => {
+  return api.get("/users").then(({ data }) => {
+    return data.users;
+  });
+};
+
+export {
+  getAllArticles,
+  getArticleById,
+  getCommentsByArticleId,
+  getUsers,
+  updateArticleVotes,
+};

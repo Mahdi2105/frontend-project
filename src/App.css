@@ -18,7 +18,8 @@ body {
   border: black 1px solid;
 }
 
-.nav-item {
+.nav-item,
+.nav-item-logout {
   padding: 10px 20px;
   text-decoration: none;
   color: black;
@@ -28,6 +29,11 @@ body {
 
 .nav-item:hover {
   background-color: #50808e;
+  color: white;
+}
+
+.nav-item-logout:hover {
+  background-color: red;
   color: white;
 }
 
@@ -49,6 +55,7 @@ img {
   justify-content: center;
 }
 
+.users-area,
 .articles-area {
   display: flex;
   justify-content: center;
@@ -56,6 +63,7 @@ img {
   flex-wrap: wrap;
 }
 
+.user-card,
 .article-card {
   background-color: #ddd8c4;
   flex: 1 1 40%;
@@ -67,6 +75,7 @@ img {
   flex-direction: column;
 }
 
+.user-card-content,
 .article-card-content {
   flex-grow: 1;
   padding: 10px;
@@ -80,18 +89,63 @@ img {
   color: black;
 }
 
-.comments-area {
-  background-color: #ddd8c4;
-  margin: 20px;
-  box-sizing: border-box;
-  border: black solid 1px;
+.single-article-bottom {
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+.single-article-bottom-item {
+  flex: 0 0 30%;
+}
+
+.login-button {
+  background-color: #a3c9a8;
+  margin-bottom: 5px;
+  min-width: 25%;
+}
+
+.login-button:hover {
+  background-color: #69a297;
+}
+.comments-area {
+  background-color: #ddd8c4;
+  margin: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: black solid 1px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .single-comment {
-  margin: 10px;
+  min-width: 100%;
   text-align: left;
   border-bottom: black solid 1px;
+  padding-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: black solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.downvote-btn,
+.upvote-btn {
+  background-color: #ddd;
+  color: #333;
+}
+
+.downvote-btn.active {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.upvote-btn.active {
+  background-color: #4caf50;
+  color: #fff;
 }

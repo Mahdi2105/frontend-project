@@ -5,16 +5,12 @@ import { getArticleById, updateArticleVotes } from "../../api";
 import ArticleComments from "./ArticleComments";
 import { UserContext } from "../contexts/UserContext";
 import { useContext } from "react";
-
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
   const [upvoted, setUpvoted] = useState(false);
   const [downvoted, setDownVoted] = useState(false);
   const { user } = useContext(UserContext);
   const { article_id } = useParams();
-
-  console.log(upvoted, "UPVOTED");
-  console.log(downvoted, "DOWNVOTED");
 
   useEffect(() => {
     getArticleById(article_id).then((article) => {

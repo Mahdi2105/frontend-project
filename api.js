@@ -34,10 +34,19 @@ const getUsers = () => {
   });
 };
 
+const postCommentByArticleId = (article_id, commentObj) => {
+  return api
+    .post(`/articles/${article_id}/comments`, commentObj)
+    .then(({ data }) => {
+      return data;
+    });
+};
+
 export {
   getAllArticles,
   getArticleById,
   getCommentsByArticleId,
   getUsers,
   updateArticleVotes,
+  postCommentByArticleId,
 };

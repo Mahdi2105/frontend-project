@@ -6,6 +6,8 @@ const UserCard = ({ user }) => {
 
   const handleLogin = () => {
     setUser(user);
+    console.log(user);
+    localStorage.setItem("user", JSON.stringify(user));
   };
   return (
     <div key={user.username} className="user-card">

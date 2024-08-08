@@ -42,6 +42,13 @@ const postCommentByArticleId = (article_id, commentObj) => {
     });
 };
 
+const deleteCommentById = (comment_id) => {
+  return api.delete(`/comments/${comment_id}`).then((data) => {
+    console.log(data);
+    return data;
+  });
+};
+
 export {
   getAllArticles,
   getArticleById,
@@ -49,4 +56,5 @@ export {
   getUsers,
   updateArticleVotes,
   postCommentByArticleId,
+  deleteCommentById,
 };

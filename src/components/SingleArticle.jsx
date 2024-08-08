@@ -89,8 +89,6 @@ const SingleArticle = () => {
         setDownVoted(true);
         setUpvoted(false);
       }
-
-      console.log(user);
     } else {
       alert("Please login to vote");
     }

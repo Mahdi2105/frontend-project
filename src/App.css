@@ -127,6 +127,23 @@ img {
   padding-bottom: 10px;
 }
 
+.comment-last-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trash-icon {
+  transition: color 0.3s;
+  margin-right: 10px;
+}
+
+.trash-icon:hover {
+  font-size: 50px;
+  margin-right: 0px;
+}
+
 .new-comment-area {
   background-color: #ddd8c4;
   margin: 20px;

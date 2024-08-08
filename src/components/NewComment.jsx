@@ -18,7 +18,6 @@ const NewComment = ({ article_id, setComments }) => {
       };
 
       postCommentByArticleId(article_id, commentObj).then((result) => {
-        console.log(result);
         setComments((prevComments) => {
           return [...prevComments, result.comment];
         });

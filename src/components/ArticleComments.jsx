@@ -31,7 +31,13 @@ const ArticleComments = ({ article_id }) => {
       <div className="comments-area">
         <h3>Comments</h3>
         {comments.map((comment) => {
-          return <SingleComment key={comment.comment_id} comment={comment} />;
+          return (
+            <SingleComment
+              key={comment.comment_id}
+              comment={comment}
+              setComments={setComments}
+            />
+          );
         })}
       </div>
       <NewComment article_id={article_id} setComments={setComments} />

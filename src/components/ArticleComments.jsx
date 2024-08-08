@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getCommentsByArticleId } from "../../api";
 import SingleComment from "./SingleComment";
 import Loading from "./Loading";
+import NewComment from "./NewComment";
 
 const ArticleComments = ({ article_id }) => {
   const [comments, setComments] = useState([]);
@@ -26,12 +27,15 @@ const ArticleComments = ({ article_id }) => {
   }
 
   return (
-    <div className="comments-area">
-      <h3>Comments</h3>
-      {comments.map((comment) => {
-        return <SingleComment key={comment.comment_id} comment={comment} />;
-      })}
-    </div>
+    <>
+      <div className="comments-area">
+        <h3>Comments</h3>
+        {comments.map((comment) => {
+          return <SingleComment key={comment.comment_id} comment={comment} />;
+        })}
+      </div>
+      <NewComment article_id={article_id} setComments={setComments} />
+    </>
   );
 };
 

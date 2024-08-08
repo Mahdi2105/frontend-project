@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const Header = () => {
   const { user, setUser } = useContext(UserContext);
+  const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
 
   const handleLogOut = () => {
     setUser({});
+    localStorage.removeItem("user");
   };
+
+  useEffect(() => {
+    if (storedUser.username) {
+      setUser(storedUser);
+    }
+  }, [setUser]);
 
   return (
     <header>
@@ -24,11 +32,7 @@ const Header = () => {
             Login
           </Link>
         ) : (
-          <Link
-            to="/"
-            onClick={() => handleLogOut()}
-            className="nav-item-logout"
-          >
+          <Link to="/" onClick={handleLogOut} className="nav-item-logout">
             Logout
           </Link>
         )}

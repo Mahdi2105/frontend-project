@@ -4,8 +4,13 @@ const api = axios.create({
   baseURL: "https://nc-project-0hto.onrender.com/api/",
 });
 
-const getAllArticles = () => {
-  return api.get(`/articles`).then(({ data }) => {
+const getArticles = (topic) => {
+  const query = {
+    params: {
+      topic: topic,
+    },
+  };
+  return api.get(`/articles`, query).then(({ data }) => {
     return data.articles;
   });
 };
@@ -34,6 +39,12 @@ const getUsers = () => {
   });
 };
 
+const getTopics = () => {
+  return api.get(`/topics`).then(({ data }) => {
+    return data.topics;
+  });
+};
+
 const postCommentByArticleId = (article_id, commentObj) => {
   return api
     .post(`/articles/${article_id}/comments`, commentObj)
@@ -50,11 +61,12 @@ const deleteCommentById = (comment_id) => {
 };
 
 export {
-  getAllArticles,
+  getArticles,
   getArticleById,
   getCommentsByArticleId,
   getUsers,
   updateArticleVotes,
   postCommentByArticleId,
   deleteCommentById,
+  getTopics,
 };

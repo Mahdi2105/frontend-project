@@ -19,7 +19,7 @@ const NewComment = ({ article_id, setComments }) => {
 
       postCommentByArticleId(article_id, commentObj).then((result) => {
         setComments((prevComments) => {
-          return [...prevComments, result.comment];
+          return [result.comment, ...prevComments];
         });
         setCommentBody("");
       });

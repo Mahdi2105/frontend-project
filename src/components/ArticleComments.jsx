@@ -28,6 +28,7 @@ const ArticleComments = ({ article_id }) => {
 
   return (
     <>
+      <NewComment article_id={article_id} setComments={setComments} />
       <div className="comments-area">
         <h3>Comments</h3>
         {comments.map((comment) => {
@@ -40,7 +41,6 @@ const ArticleComments = ({ article_id }) => {
           );
         })}
       </div>
-      <NewComment article_id={article_id} setComments={setComments} />
     </>
   );
 };

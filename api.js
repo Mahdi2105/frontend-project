@@ -4,10 +4,12 @@ const api = axios.create({
   baseURL: "https://nc-project-0hto.onrender.com/api/",
 });
 
-const getArticles = (topic) => {
+const getArticles = (topic, sortBy, order) => {
   const query = {
     params: {
       topic: topic,
+      sort_by: sortBy,
+      order: order,
     },
   };
   return api.get(`/articles`, query).then(({ data }) => {

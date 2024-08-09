@@ -1,9 +1,9 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 import { useContext, useState } from "react";
-import { deleteCommentById } from "../../api";
+import { deleteCommentById } from "../../../api";
 
 const SingleComment = ({ comment, setComments }) => {
   const { user } = useContext(UserContext);

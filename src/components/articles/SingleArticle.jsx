@@ -1,10 +1,10 @@
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticleById, updateArticleVotes } from "../../api";
 import ArticleComments from "./ArticleComments";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
+import { getArticleById, updateArticleVotes } from "../../../api";
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
   const [upvoted, setUpvoted] = useState(false);

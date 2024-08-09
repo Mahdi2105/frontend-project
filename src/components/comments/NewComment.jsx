@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
-import { UserContext } from "../contexts/UserContext";
 import { useContext, useState } from "react";
-import { postCommentByArticleId } from "../../api";
+import { postCommentByArticleId } from "../../../api";
+import { UserContext } from "../../contexts/UserContext";
 
 const NewComment = ({ article_id, setComments }) => {
   const { user } = useContext(UserContext);

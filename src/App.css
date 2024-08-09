@@ -201,14 +201,21 @@ button {
 .article-queries {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .dropdown-area {
   display: flex;
-  align-self: flex-end;
   margin: 0 10px;
 }
 
 .dropdown {
   min-width: 120px;
+}
+
+.error-msg {
+  color: red;
+  margin: 5px;
+  padding: 5px;
+  background-color: #ddd8c4;
 }

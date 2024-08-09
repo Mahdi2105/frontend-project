@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react";
-import { getTopics } from "../../../api";
 import { MenuItem, Select } from "@mui/material";
 import { useSearchParams } from "react-router-dom";
 
-const Topics = ({ topic, setTopic, sortBy, order }) => {
-  const [topics, setTopics] = useState([]);
+const Topics = ({ topic, topics, setTopic, sortBy, order }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-
-  useEffect(() => {
-    getTopics().then((topicsData) => {
-      setTopics(topicsData);
-    });
-  }, []);
 
   const handleChange = (event) => {
     setTopic(event.target.value);
     if (event.target.value === "") {
-      console.log(sortBy, order);
       setSearchParams({ sort_by: sortBy, order });
     } else {
       setSearchParams({ topic: event.target.value, sort_by: sortBy, order });

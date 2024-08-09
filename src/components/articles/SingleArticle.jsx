@@ -5,17 +5,24 @@ import ArticleComments from "./ArticleComments";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 import { getArticleById, updateArticleVotes } from "../../../api";
+import NotFound from "../errors/NotFound";
+
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
   const [upvoted, setUpvoted] = useState(false);
   const [downvoted, setDownVoted] = useState(false);
   const { user } = useContext(UserContext);
   const { article_id } = useParams();
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    getArticleById(article_id).then((article) => {
-      setArticle(article);
-    });
+    getArticleById(article_id)
+      .then((article) => {
+        setArticle(article);
+      })
+      .catch((err) => {
+        setError(true);
+      });
   }, [article_id]);
 
   function addVote() {
@@ -96,35 +103,47 @@ const SingleArticle = () => {
 
   return (
     <div className="main-content">
-      <div className="article-card">
-        <div className="article-card-content">
-          <h2>{article.title}</h2>
-          <img src={article.article_img_url} />
-          <p>Description: {article.body}</p>
-        </div>
-        <div className="single-article-bottom">
-          <p className="single-article-bottom-item">Topic: {article.topic}</p>
+      {error ? (
+        <NotFound errMsg={"Sorry This Article Does Not exist"} />
+      ) : (
+        <div>
+          <div className="article-card">
+            <div className="article-card-content">
+              <h2>{article.title}</h2>
+              <img src={article.article_img_url} />
+              <p>Description: {article.body}</p>
+            </div>
+            <div className="single-article-bottom">
+              <p className="single-article-bottom-item">
+                Topic: {article.topic}
+              </p>
 
-          <p className="single-article-bottom-item">Author: {article.author}</p>
-          <p className="single-article-bottom-item">
-            Created at: {moment(article.created_at).format("LLL")}
-          </p>
-          <button
-            className={`downvote-btn ${downvoted ? "active" : ""}`}
-            onClick={() => handleVote("downvote")}
-          >
-            Downvote
-          </button>
-          <p className="single-article-bottom-item">Votes: {article.votes}</p>
-          <button
-            className={`upvote-btn ${upvoted ? "active" : ""}`}
-            onClick={() => handleVote("upvote")}
-          >
-            Upvote
-          </button>
+              <p className="single-article-bottom-item">
+                Author: {article.author}
+              </p>
+              <p className="single-article-bottom-item">
+                Created at: {moment(article.created_at).format("LLL")}
+              </p>
+              <button
+                className={`downvote-btn ${downvoted ? "active" : ""}`}
+                onClick={() => handleVote("downvote")}
+              >
+                Downvote
+              </button>
+              <p className="single-article-bottom-item">
+                Votes: {article.votes}
+              </p>
+              <button
+                className={`upvote-btn ${upvoted ? "active" : ""}`}
+                onClick={() => handleVote("upvote")}
+              >
+                Upvote
+              </button>
+            </div>
+          </div>
+          <ArticleComments article_id={article.article_id} />
         </div>
-      </div>
-      <ArticleComments article_id={article.article_id} />
+      )}
     </div>
   );
 };

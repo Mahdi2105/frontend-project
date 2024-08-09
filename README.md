@@ -1,8 +1,20 @@
-# React + Vite
+Backend API : https://nc-project-0hto.onrender.com/api/
+Backend Repo: https://github.com/Mahdi2105/backend-project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend APP: https://mahdi-nc-news.netlify.app
+Frontend Repo: https://github.com/Mahdi2105/frontend-project
 
-Currently, two official plugins are available:
+This is a simple News App where you can view articles on different topics.
+Users that are signed in can also add comments to articles, and delete
+comments that they have posted.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+How to run the code locally:
+
+1. In the terminal run: git clone https://github.com/Mahdi2105/frontend-project.git
+2. Run: npm install
+3. Run: npm run dev
+4. To Add/Remove comments you will need to login, this can be done by clicking login
+   on the top right and selecting one of the users
+
+This portfolio project was created as part of a Digital Skills Bootcamp
+in Software Engineering provided by [Northcoders](https://northcoders.com/)

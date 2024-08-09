@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getCommentsByArticleId } from "../../api";
-import SingleComment from "./SingleComment";
-import Loading from "./Loading";
-import NewComment from "./NewComment";
+import { getCommentsByArticleId } from "../../../api";
+import NewComment from "../comments/NewComment";
+import SingleComment from "../comments/SingleComment";
+import Loading from "../Loading";
 
 const ArticleComments = ({ article_id }) => {
   const [comments, setComments] = useState([]);

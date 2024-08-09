@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Articles from "./components/Articles";
+import "./App.css";
+import Articles from "./components/articles/Articles";
+import SingleArticle from "./components/articles/SingleArticle";
+import Users from "./components/users/Users";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import "./App.css";
-import SingleArticle from "./components/SingleArticle";
-import Users from "./components/Users";
 
 function App() {
   return (

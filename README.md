@@ -1,7 +1,7 @@
 Backend API : https://nc-project-0hto.onrender.com/api/
 Backend Repo: https://github.com/Mahdi2105/backend-project
 
-Frontend APP: https://mahdi-nc-news.netlify.app
+Frontend APP: https://mahdi-nc-news.netlify.app/articles
 Frontend Repo: https://github.com/Mahdi2105/frontend-project
 
 This is a simple News App where you can view articles on different topics.
